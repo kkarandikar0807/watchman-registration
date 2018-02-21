@@ -15,6 +15,7 @@ public class RegistrationAPI {
     @Autowired
     RegistrationService service;
 
+
     @PostMapping(path = "/register")
     public String registerUser(@RequestBody User user) throws IOException, URISyntaxException {
 
