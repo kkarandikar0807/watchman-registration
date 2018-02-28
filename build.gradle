@@ -20,6 +20,12 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    mavenLocal()
+    jcenter()
+    maven { url "https://globalrepository.mclocal.int/artifactory/releases" }
+    maven { url "https://globalrepository.mclocal.int/artifactory/public-snapshots" }
+    maven { url "https://globalrepository.mclocal.int/artifactory/public" }
+    maven { url "https://globalrepository.mclocal.int/artifactory/dante-remote" }
 }
 
 
