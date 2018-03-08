@@ -1,6 +1,5 @@
 package com.watchman.registration.registration;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.watchman.registration.user.User;
 import constants.ConstantRoutes;
 import helpers.UrlBuilder;
@@ -17,7 +16,7 @@ public class RegistrationService {
     private String url;
 
 
-    protected String registerUser(User user) throws IOException, URISyntaxException {
+    protected String registerUser(User user) throws URISyntaxException {
         String endpoint = ConstantRoutes.register;
         URI obj = new URI(UrlBuilder.buildUrl(this.url, endpoint));
         RestTemplate restTemplate = new RestTemplate();
