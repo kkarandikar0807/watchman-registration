@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,8 +27,16 @@ public class RegistrationAPI {
         logger.info("Trying to implement dummy log");
         logger.warn("A warning message");
         logger.error("Error message log");
+
        return service.registerUser(user);
     }
+
+    @GetMapping(path = "/health")
+    public String getHealth() {
+        return "Health check";
+    }
+
+
 
     public String fallbackHystrix() {
         return "Fallback method called";
